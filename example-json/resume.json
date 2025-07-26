@@ -1,0 +1,68 @@
+{
+	"title": "Your Name",
+	"subtitle": "Software Developer",
+	"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+	"address": "Region, Country",
+	"email": "test@example.org",
+	"downloadPDF": "Download Full Resume",
+	"pdfFilename": "resume.pdf",
+	"clients": "Clients",
+	"keyTechnologies": "Key Technologies",
+	"phone": "123 456 7890",
+	"education": {
+		"name": "University",
+		"time": "1970",
+		"degree": "Bachelor of Science",
+		"major": "Computer Science"
+	},
+	"jobs": {
+		"job1": {
+			"employer": "Company",
+			"jobTitle": "Senior Software Engineer",
+			"time": "1971 - 1972",
+			"timeWithMonth": "Jan 1971 - Feb 1972",
+			"jobLocation": "City, Region",
+			"bullets": [
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+			],
+			"techSkills": [
+				"Technology",
+				"Agile",
+				"Programming"
+			]
+		},
+		"job2": {
+			"employer": "Company",
+			"jobTitle": "Software Engineer",
+			"time": "1970 - 1971",
+			"timeWithMonth": "Jan 1970 - Feb 1971",
+			"jobLocation": "City, Region",
+			"bullets": [
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+			],
+			"techSkills": [
+				"Technology",
+				"Agile",
+				"Programming"
+			]
+		}
+	},
+	"skills": {
+		"tech": [
+			"Technology",
+			"Programming"
+		],
+		"otherTech": [
+			"Technology",
+			"Programming"
+		]
+	},
+	"portfolio": {
+		"github": {
+			"title": "github_handle",
+			"link": "https://github.com"
+		}
+	}
+}
