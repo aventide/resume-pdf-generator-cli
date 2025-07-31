@@ -8,9 +8,18 @@ A CLI-tool to generate a PDF of a beautifully-formatted resume, from structured 
 
 ## Usage
 
+If using directly within a dev environment:
+
 `npm run start <PATH_TO_JSON_FILE>`
 
 Edit the fields in the JSON file, making copies of lines where desired. Then run the command above to generate a PDF.
+
+If using as a standalone executable:
+
+`npm run build:native` or one of the specific build scripts for your OS
+
+After retrieving the executable from the `dist` folder, run:
+`./resume-generate <PATH_TO_JSON_FILE>` assuming you are using the native executable.
 
 You can see examples of a JSON file with specifically-named fields (for positioning content in the PDF) in the `example-json` directory.
 
