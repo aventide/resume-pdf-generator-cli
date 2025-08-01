@@ -2,7 +2,7 @@
   "name": "resume-pdf-generator-cli",
   "version": "1.0.0",
   "description": "A utility to turn a JSON file with personal resume info into a nicely-formatted PDF document using a JSX template",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "build": "npm run build:macos-arm64 && npm run build:windows",
     "build:native": "bun build --compile --outfile dist/resume-generate index.tsx",
