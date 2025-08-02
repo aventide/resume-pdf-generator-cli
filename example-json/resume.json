@@ -2,6 +2,7 @@
 	"title": "Your Name",
 	"subtitle": "Software Developer",
 	"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+	"themeColor": "#000000",
 	"address": "Region, Country",
 	"email": "test@example.org",
 	"downloadPDF": "Download Full Resume",

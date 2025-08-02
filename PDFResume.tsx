@@ -2,13 +2,13 @@ import path from 'node:path';
 
 import type { ReactNode } from 'react';
 import {
-  Document,
-  Font,
-  Image,
-  Page,
-  StyleSheet,
-  Text,
-  View,
+	Document,
+	Font,
+	Image,
+	Page,
+	StyleSheet,
+	Text,
+	View,
 } from '@react-pdf/renderer';
 
 const FigtreeBoldFont = path.resolve(__dirname, './assets/fonts/Figtree-Bold.ttf');
@@ -132,7 +132,7 @@ function Job({ company, text, ...rest }) {
 			{...rest}
 		>
 			<View style={{ flexDirection: "column" }}>
-				{bullets.map((bullet: string, index) => (
+				{bullets && bullets.map((bullet: string, index) => (
 					<View
 						style={{ flexDirection: "row", fontSize: bodyFontSize }}
 						key={`bullet-${index}`}
@@ -244,47 +244,54 @@ export default function PDFResume({
 		<Document>
 			<Page size="LETTER">
 				<View style={{ margin: "12pt" }}>
-					<View style={{ height: "12pt", backgroundColor: "#000000" }} />
+					<View style={{ height: "12pt", backgroundColor: text.themeColor }} />
 					<Header text={text} />
 					<View style={{ flexDirection: "row" }}>
 						<View style={{ width: "70%" }}>
 							<ResumeSection title="professional experience">
-								<Job text={text} company="job1" />
-								<Job text={text} company="job2" />
+								{
+									Object.keys(text.jobs).map((job) =>
+										<Job key={job} text={text} company={job} />
+									)
+								}
 							</ResumeSection>
 						</View>
 						<View style={{ width: "30%" }}>
 							<ResumeSection title="Skills">
-								<SkillCategory title="Tech" skillList={text.skills.tech} />
-								<SkillCategory title="Other Tech" skillList={text.skills.otherTech} />
+								{Object.keys(text.skills).map(
+									skill =>
+										<SkillCategory key={skill} title={skill} skillList={text.skills[skill]} />
+								)}
 							</ResumeSection>
-							<ResumeSection title="Portfolio">
-								<View style={{ flexDirection: "row", marginBottom: "8pt" }}>
-									<Text
-										style={{
-											fontSize: headingFontSize,
-											fontFamily: "Figtree",
-											marginRight: "4pt",
-										}}
-									>
-										Github
-									</Text>
-									<Text
-										style={{ fontFamily: "Figtree", fontSize: headingFontSize }}
-									>
-										|
-									</Text>
-									<Text
-										style={{
-											fontSize: headingFontSize,
-											marginLeft: "4pt",
-											fontFamily: "Lato",
-										}}
-									>
-										{text.portfolio.github.title}
-									</Text>
-								</View>
-							</ResumeSection>
+							{
+								text.portfolio && <ResumeSection title="Portfolio">
+									<View style={{ flexDirection: "row", marginBottom: "8pt" }}>
+										<Text
+											style={{
+												fontSize: headingFontSize,
+												fontFamily: "Figtree",
+												marginRight: "4pt",
+											}}
+										>
+											Github
+										</Text>
+										<Text
+											style={{ fontFamily: "Figtree", fontSize: headingFontSize }}
+										>
+											|
+										</Text>
+										<Text
+											style={{
+												fontSize: headingFontSize,
+												marginLeft: "4pt",
+												fontFamily: "Lato",
+											}}
+										>
+											{text.portfolio.github.title}
+										</Text>
+									</View>
+								</ResumeSection>
+							}
 							<ResumeSection title="Education">
 								<View style={{ marginBottom: "4pt" }}>
 									<Text
